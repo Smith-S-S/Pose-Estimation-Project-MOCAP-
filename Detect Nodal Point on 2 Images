@@ -1,0 +1,15 @@
+#importing the required libraries 
+
+
+# importing the opencv
+#image processing
+import cv2 
+
+
+# importing mediapipe for finding the nodal in the image
+import mediapipe as mp 
+
+mpDraw=mp.solutions.drawing_utils
+mp_pose= mp.solutions.pose
+
+model =mp_pose.Pose()
