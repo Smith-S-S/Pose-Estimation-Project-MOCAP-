@@ -1,15 +1,34 @@
-#importing the required libraries 
-
-
-# importing the opencv
-#image processing
-import cv2 
-
-
-# importing mediapipe for finding the nodal in the image
-import mediapipe as mp 
+import cv2
+import numpy as np
+import mediapipe as mp
 
 mpDraw=mp.solutions.drawing_utils
-mp_pose= mp.solutions.pose
 
+mp_pose= mp.solutions.pose
 model =mp_pose.Pose()
+
+
+ima_0 =cv2.imread('video/m1.jpg')
+ima_1 = cv2.imread('video/Unknown.jpg')
+
+img_0_RGB = cv2.cvtColor(ima_0,cv2.COLOR_BGR2RGB)
+ima_1_RGB = cv2.cvtColor(ima_1,cv2.COLOR_BGR2RGB)
+
+result= model.process(img_0_RGB)
+result_1= model.process(ima_1_RGB)
+
+
+if result.pose_landmarks:
+    mpDraw.draw_landmarks(ima_0,result.pose_landmarks)
+    mpDraw.draw_landmarks(ima_0, result.pose_landmarks,mp_pose.POSE_CONNECTIONS)
+    cv2.imshow("video", ima_0)
+
+if result_1.pose_landmarks:
+
+    mpDraw.draw_landmarks(ima_1,result_1.pose_landmarks)
+    mpDraw.draw_landmarks(ima_1, result_1.pose_landmarks,mp_pose.POSE_CONNECTIONS)
+    cv2.imshow("vide", ima_1)
+    cv2.waitKey()
+
+
+
