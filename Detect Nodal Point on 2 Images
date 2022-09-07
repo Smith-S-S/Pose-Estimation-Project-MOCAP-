@@ -7,13 +7,15 @@ mpDraw=mp.solutions.drawing_utils
 mp_pose= mp.solutions.pose
 model =mp_pose.Pose()
 
-
+#reading 2 image using opencv
 ima_0 =cv2.imread('video/m1.jpg')
 ima_1 = cv2.imread('video/Unknown.jpg')
 
+#convering the imgae from BGR to RGB
 img_0_RGB = cv2.cvtColor(ima_0,cv2.COLOR_BGR2RGB)
 ima_1_RGB = cv2.cvtColor(ima_1,cv2.COLOR_BGR2RGB)
 
+#comparing with the model
 result= model.process(img_0_RGB)
 result_1= model.process(ima_1_RGB)
 
