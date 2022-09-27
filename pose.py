@@ -46,7 +46,7 @@ while True:
             # printing circle
             cv2.circle(img,(cx,cy),5,(0,255,0),cv2.FILLED)
             print()
-   # ------------------------
+   # ----------------------------------------------------------
 
 
     ct= time.time()
