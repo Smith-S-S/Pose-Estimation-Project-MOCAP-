@@ -1,6 +1,6 @@
 import cv2 
 import numpy as np
-
+# check once again..
 cam_0 = cv2.VideoCapture(0)
 cam_1 = cv2.VideoCapture(1)
 
