@@ -1,6 +1,6 @@
 import cv2 
 import numpy as np
-
+# chaeck this 
 cam_0 = cv2.VideoCapture(0)
 cam_1 = cv2.VideoCapture(1)
 
